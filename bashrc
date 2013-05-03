@@ -52,3 +52,40 @@ fi
 
 # Fix simple misspellings when cd-ing
 shopt -s cdspell
+
+###
+## Prompt & terminal title
+# 
+
+# Newline (\n) before every prompt for nice spacing
+# Color prompt
+# 30m - Black
+# 31m - Red
+# 32m - Green
+# 33m - Yellow
+# 34m - Blue
+# 35m - Purple
+# 36m - Cyan
+# 37m - White
+# 0 - Normal
+# 1 - Bold
+# 2 - 
+function prompt {
+local BLACK="\[\033[0;30m\]"
+local RED="\[\033[0;31m\]"
+local GREEN="\[\033[0;32m\]"
+local YELLOW="\[\033[0;33m\]"
+local BLUE="\[\033[0;34m\]"
+local PURPLE="\[\033[0;35m\]"
+local CYAN="\[\033[0;36m\]"
+local WHITE="\[\033[0;37m\]"
+local WHITEBOLD="\[\033[1;37m\]"
+
+export PS1="\n${GREEN}\u${GREEN}@${GREEN}\h:${BLUE}\w${WHITE}\n$ "
+}
+prompt
+
+# Change Terminal title to include hostname,
+# current working directory, & current program
+# Example: virgil:~/bin/dotfiles (bash)
+export PROMPT_COMMAND='echo -ne "\033]0;$(echo $HOSTNAME | cut -d . -f 1):${PWD/$HOME/~}\007"'
