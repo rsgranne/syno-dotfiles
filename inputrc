@@ -1,0 +1,52 @@
+# This file controls the behaviour of line input editing
+# for programs that use the GNU Readline library.
+# Existing programs include FTP, Bash, & GDB.
+
+# You can re-read the inputrc file with C-x C-r.
+
+# First, include any systemwide bindings & variables from /etc/inputrc
+# $include /etc/inputrc
+
+# See http://code.google.com/p/iterm2/wiki/Keybindings for many details
+# also https://wiki.archlinux.org/index.php/Readline
+
+# Use Unicode & do NOT use the "8bit hack" to input/output non-ASCII characters
+set input-meta on
+set output-meta on
+set convert-meta off
+
+# When pressing up or down arrows, show only history entries
+# that match what was already typed
+"\e[A":history-search-backward
+"\e[B":history-search-forward
+
+# Turn on case insensitivity for tab-completion
+# type "doc<tab>" to search for "Documents"
+set completion-ignore-case on
+
+# Words which have more than one possible completion 
+# cause the matches to be listed immediately instead of ringing the bell
+set show-all-if-ambiguous on
+
+# Do not echo ^C after Ctrl+C is pressed
+set echo-control-characters off
+
+# Do not insert characters from a completion that match characters
+# after the word being completed
+# If cursor is after the ‘e’ in ‘Makefile’,
+# <tab> will result in ‘Makefile’ rather than ‘Makefilefile’
+set skip-completed-text on
+
+# / after directories
+set mark-directories on
+# / after soft linked directories
+set mark-symlinked-directories on
+
+$if Bash
+  # F10 toggles mc on and off
+  # Note Ctrl-o toggles panes on and off in mc
+  "\e[21~": "mc\C-M"
+
+  #do history expansion when space entered
+  Space: magic-space
+$endif
