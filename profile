@@ -24,10 +24,6 @@ export TERM
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# Check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS
-shopt -s checkwinsize
-
 ###
 ## Prompt & terminal title
 # 
@@ -47,15 +43,16 @@ shopt -s checkwinsize
 # 1 - Bold
 # 2 - 
 function prompt {
-  local BLACK="\[\033[0;30m\]"
-  local RED="\[\033[0;31m\]"
-  local GREEN="\[\033[0;32m\]"
-  local YELLOW="\[\033[0;33m\]"
-  local BLUE="\[\033[0;34m\]"
-  local PURPLE="\[\033[0;35m\]"
-  local CYAN="\[\033[0;36m\]"
-  local WHITE="\[\033[0;37m\]"
-  local WHITEBOLD="\[\033[1;37m\]"
+local BLACK="\[\033[0;30m\]"
+local RED="\[\033[0;31m\]"
+local GREEN="\[\033[0;32m\]"
+local YELLOW="\[\033[0;33m\]"
+local BLUE="\[\033[0;34m\]"
+local PURPLE="\[\033[0;35m\]"
+local CYAN="\[\033[0;36m\]"
+local WHITE="\[\033[0;37m\]"
+local WHITEBOLD="\[\033[1;37m\]"
+  
 export PS1="
 ${GREEN}\u${GREEN}@${GREEN}\h:${BLUE}\w${WHITE}
 $ "
@@ -78,7 +75,7 @@ PATH=/opt/bin:/opt/sbin:$PATH
 export PATH
 
 # less is more
-if [ -f /opt/bin/less ] ; then
+if [ -f /opt/bin/less-less ] ; then
   PAGER=less
 else
   PAGER=more
