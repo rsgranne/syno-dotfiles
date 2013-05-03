@@ -18,7 +18,7 @@
 ## Variables
 # 
 
-dotsdir="bin/syno-dotfiles"  # dotfiles directory
+dotsdir="bin/dotfiles"  # dotfiles directory
 dotsdirbak="dotfiles_bak"    # old dotfiles backup directory
 
 ###
