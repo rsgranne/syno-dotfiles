@@ -18,8 +18,8 @@
 ## Variables
 # 
 
-dotsdir="bin/dotfiles"      # dotfiles directory
-dotsdirbak="dotfiles_bak"   # old dotfiles backup directory
+dotsdir="bin/syno-dotfiles"  # dotfiles directory
+dotsdirbak="dotfiles_bak"    # old dotfiles backup directory
 
 ###
 ## Back up if necessary; create symlinks
