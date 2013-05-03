@@ -22,13 +22,21 @@ alias sshconfig='egrep "^Host" ~/.ssh/config'
 ## ls
 # 
 
-alias l='/bin/ls -FG'
-alias l1='/bin/ls -1G'
-alias la='/bin/ls -aFG'
+# -A Hide . & ..
+# -a Show all, including . & ..
+# -d List directory entries instead of contents
+# -F Append indicator [*/=@|] to entries
+# -h Human readable: K, M, G, T
+# -l Long
+# -1 Single column
+
+alias l='/bin/ls -F --color=auto'
+alias l1='/bin/ls -1 --color=auto'
+alias la='/bin/ls -AF --color=auto'
 alias ld='/bin/ls -l | grep "^d"'
 alias ldown='/bin/ls -AF $(ls -A)' # show current dir & all dirs one level down
-alias ll='/bin/ls -lahFG'
-alias ls='/bin/ls -FG'
+alias ll='/bin/ls -lhFA --color=auto'
+alias ls='/bin/ls -F --color=auto'
 alias lsd='/bin/ls -d */'
 alias lsize='/bin/ls -l | sort -r -n +4'
 
