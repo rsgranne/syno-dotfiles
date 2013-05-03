@@ -42,3 +42,12 @@ else
 fi
 
 export PAGER
+
+###
+## bash!
+# 
+
+# Give me bash!
+if [ -x /opt/bin/bash ]; then
+  exec /opt/bin/bash
+fi
