@@ -43,9 +43,6 @@ fi
 
 export PAGER
 
-# Homebrew Cask
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
 ###
 ## bash!
 # 
